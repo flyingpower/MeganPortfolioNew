@@ -1,0 +1,264 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-pink-soft: var(--pink-soft);
+  --color-pink: var(--pink);
+  --color-pink-strong: var(--pink-strong);
+  --color-pink-foreground: var(--pink-foreground);
+  --color-green: var(--green);
+  --color-green-foreground: var(--green-foreground);
+  --color-hairline: var(--hairline);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1.1rem;
+
+  /* warm off-white with the faintest pink tint */
+  --background: oklch(0.985 0.008 15);
+  --foreground: oklch(0.16 0.01 320);
+
+  --card: oklch(0.995 0.003 15);
+  --card-foreground: oklch(0.16 0.01 320);
+  --popover: oklch(0.995 0.003 15);
+  --popover-foreground: oklch(0.16 0.01 320);
+
+  --primary: oklch(0.16 0.01 320);
+  --primary-foreground: oklch(0.99 0.005 15);
+  --secondary: oklch(0.96 0.012 15);
+  --secondary-foreground: oklch(0.18 0.01 320);
+  --muted: oklch(0.955 0.01 15);
+  --muted-foreground: oklch(0.48 0.02 320);
+  --accent: oklch(0.9 0.07 10);
+  --accent-foreground: oklch(0.2 0.04 10);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.91 0.015 10);
+  --input: oklch(0.91 0.015 10);
+  --ring: oklch(0.82 0.1 10);
+
+  /* pink ramp — soft, primary, strong */
+  --pink-soft: oklch(0.95 0.035 10);
+  --pink: oklch(0.88 0.085 10);
+  --pink-strong: oklch(0.78 0.14 12);
+  --pink-foreground: oklch(0.22 0.05 10);
+
+  --green: oklch(0.84 0.135 150);
+  --green-foreground: oklch(0.22 0.06 150);
+  --hairline: oklch(0.88 0.025 10);
+
+  --chart-1: oklch(0.88 0.085 10);
+  --chart-2: oklch(0.84 0.135 150);
+  --chart-3: oklch(0.5 0.02 320);
+  --chart-4: oklch(0.78 0.14 12);
+  --chart-5: oklch(0.2 0.01 320);
+
+  --sidebar: oklch(0.99 0.005 15);
+  --sidebar-foreground: oklch(0.16 0.01 320);
+  --sidebar-primary: oklch(0.16 0.01 320);
+  --sidebar-primary-foreground: oklch(0.99 0.005 15);
+  --sidebar-accent: oklch(0.955 0.01 15);
+  --sidebar-accent-foreground: oklch(0.18 0.01 320);
+  --sidebar-border: oklch(0.91 0.015 10);
+  --sidebar-ring: oklch(0.82 0.1 10);
+}
+
+.dark {
+  --background: oklch(0.14 0.01 320);
+  --foreground: oklch(0.98 0.005 15);
+  --card: oklch(0.2 0.01 320);
+  --card-foreground: oklch(0.98 0.005 15);
+  --popover: oklch(0.2 0.01 320);
+  --popover-foreground: oklch(0.98 0.005 15);
+  --primary: oklch(0.98 0.005 15);
+  --primary-foreground: oklch(0.2 0.01 320);
+  --secondary: oklch(0.25 0.01 320);
+  --secondary-foreground: oklch(0.98 0.005 15);
+  --muted: oklch(0.25 0.01 320);
+  --muted-foreground: oklch(0.7 0.02 320);
+  --accent: oklch(0.3 0.07 10);
+  --accent-foreground: oklch(0.98 0.005 15);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.98 0.005 15);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.12 10);
+  --pink-soft: oklch(0.32 0.05 10);
+  --pink: oklch(0.78 0.09 10);
+  --pink-strong: oklch(0.7 0.16 12);
+  --pink-foreground: oklch(0.15 0.03 10);
+  --green: oklch(0.78 0.13 150);
+  --green-foreground: oklch(0.15 0.04 150);
+  --hairline: oklch(1 0 0 / 12%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(
+        circle at 12% 10%,
+        color-mix(in oklab, var(--color-pink) 28%, transparent),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 90% 0%,
+        color-mix(in oklab, var(--color-green) 18%, transparent),
+        transparent 40%
+      );
+    background-attachment: fixed;
+  }
+
+  .font-display,
+  .font-serif {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* faint dotted texture available as a utility */
+  .bg-dotted {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--color-foreground) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 16px 16px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 40s linear infinite;
+  }
+
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee-x 40s linear infinite;
+  }
+
+  @keyframes blob-float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(20px, -30px) scale(1.05); }
+    66%      { transform: translate(-15px, 20px) scale(0.97); }
+  }
+  .animate-blob {
+    animation: blob-float 18s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-spin-slow,
+    .animate-marquee,
+    .animate-blob {
+      animation: none !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-shadow duration-300 active:scale-95 bg-pink-strong text-black shadow-[0_8px_24px_-10px] shadow-pink-strong/60 hover:shadow-[0_18px_44px_-12px] hover:shadow-pink-strong/80 focus-visible:outline-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 active:scale-95 border bg-white text-black backdrop-blur-md hover:border-pink-strong hover:bg-pink-strong hover:text-black active:border-pink-strong active:bg-pink-strong active:text-black focus-visible:border-pink-strong focus-visible:bg-pink-strong focus-visible:text-black focus-visible:outline-none;
+    border-color: oklch(0.78 0.012 320);
+    border-width: 1px;
+  }
+  .btn-dark {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 active:scale-95 bg-foreground text-background hover:bg-foreground/90 focus-visible:outline-none;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+  /* Arrow rotates to horizontal (pointing right) on hover/active/focus of the button */
+  .btn-arrow {
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .btn-primary:hover .btn-arrow,
+  .btn-primary:active .btn-arrow,
+  .btn-primary:focus-visible .btn-arrow,
+  .btn-secondary:hover .btn-arrow,
+  .btn-secondary:active .btn-arrow,
+  .btn-secondary:focus-visible .btn-arrow,
+  .btn-dark:hover .btn-arrow,
+  .btn-dark:active .btn-arrow,
+  .btn-dark:focus-visible .btn-arrow,
+  .group:hover .btn-arrow,
+  .group:active .btn-arrow,
+  .group:focus-visible .btn-arrow {
+    transform: rotate(45deg);
+  }
+}
+
+
