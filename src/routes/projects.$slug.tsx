@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { getProject, projects, type Project } from "@/data/projects";
 import { BackButton } from "@/components/site/BackButton";
 
@@ -48,16 +48,69 @@ export const Route = createFileRoute("/projects/$slug")({
   component: CaseStudy,
 });
 
-function SmallImage({ label, cover }: { label: string; cover: string }) {
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Expand } from "lucide-react";
+import { useState } from "react";
+
+function SmallImage({ label, cover, src }: { label: string; cover: string; src?: string }) {
+  const isVideo = src?.endsWith(".mp4") || src?.endsWith(".webm") || src?.endsWith(".mov");
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div
-      className={`relative aspect-[16/9] w-full max-w-xl overflow-hidden rounded-xl border border-hairline bg-gradient-to-br ${cover}`}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4),transparent_60%)]" />
-      <div className="absolute bottom-3 left-3 rounded-full bg-background/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-foreground/70 backdrop-blur-sm">
-        {label}
-      </div>
-    </div>
+    <Dialog>
+      <DialogTrigger asChild>
+        <div
+          className="relative w-full max-w-xl cursor-pointer overflow-hidden rounded-xl border border-hairline"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {src ? (
+            isVideo ? (
+              <video
+                src={src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="block h-auto w-full"
+              />
+            ) : (
+              <img
+                src={src}
+                alt={label}
+                className="block h-auto w-full"
+              />
+            )
+          ) : (
+            <div className={`aspect-[16/9] w-full bg-gradient-to-br ${cover}`} />
+          )}
+
+          <AnimatePresence>
+            {isHovered && !isVideo && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 grid place-items-center bg-black/40"
+              >
+                <Expand size={32} className="text-white" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <div className="absolute bottom-3 left-3 rounded-full bg-background/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-foreground/70 backdrop-blur-sm">
+            {label}
+          </div>
+        </div>
+      </DialogTrigger>
+      <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-y-auto p-2">
+        <img src={src} alt={label} className="h-auto w-full" />
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -65,16 +118,7 @@ function CaseStudy() {
   const { project } = Route.useLoaderData() as { project: Project };
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
-  const sections: Array<{ heading: string; body: string; image?: boolean }> = [
-    { heading: "Introduction", body: project.caseStudy.introduction },
-    { heading: "Context", body: project.caseStudy.context, image: true },
-    { heading: "Challenge", body: project.caseStudy.challenge },
-    { heading: "My Role", body: project.caseStudy.myRole },
-    { heading: "Process", body: project.caseStudy.process, image: true },
-    { heading: "Key Decisions", body: project.caseStudy.designDecisions },
-    { heading: "Outcome", body: project.caseStudy.outcome, image: true },
-    { heading: "Learnings", body: project.caseStudy.learnings },
-  ];
+  const sections = project.caseStudy;
 
   return (
     <article>
@@ -141,7 +185,7 @@ function CaseStudy() {
               </p>
               {section.image && (
                 <div className="mt-6">
-                  <SmallImage label={`${section.heading} · placeholder`} cover={project.cover} />
+                  <SmallImage label={section.image.caption} cover={project.cover} src={section.image.src} />
                 </div>
               )}
             </motion.section>

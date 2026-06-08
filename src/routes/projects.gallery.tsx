@@ -4,6 +4,21 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { BackButton } from "@/components/site/BackButton";
 
+import img_Smashburger_Video from "../../content/Visual Archive/Smashburger_Video.mp4";
+import img_Smashburger_Tiktok from "../../content/Visual Archive/Smashburger_Tiktok.mp4";
+import img_Theater_Poster from "../../content/Visual Archive/Theater_Poster.jpg";
+import img_The_great_Search from "../../content/Visual Archive/The_great_Search.jpg";
+import img_A_Window_in_my_Life from "../../content/Visual Archive/A_Window_in_my_Life.jpg";
+import img_Smashburger_Story from "../../content/Visual Archive/Smashburger_Story.jpg";
+import img_Woman_Illustration from "../../content/Visual Archive/Woman_Illustration.jpg";
+import img_Visual_Design_Poster_3 from "../../content/Visual Archive/Visual_Design_Poster_3.jpg";
+import img_Willy_Poster from "../../content/Visual Archive/Willy_Poster.jpeg";
+import img_Theater_Flyer from "../../content/Visual Archive/Theater_Flyer.jpg";
+import img_Typo_Poster from "../../content/Visual Archive/Typo_Poster.jpeg";
+import img_Smashburger_Post from "../../content/Visual Archive/Smashburger_Post.jpg";
+import img_WKV_Website from "../../content/Visual Archive/WKV_Website.jpeg";
+import img_Ramen_Illustration from "../../content/Visual Archive/Ramen_Illustration.jpg";
+
 export const Route = createFileRoute("/projects/gallery")({
   head: () => ({
     meta: [
@@ -36,42 +51,120 @@ type GalleryImage = {
   size: GallerySize;
 };
 
-const CATEGORIES = [
-  "Poster",
-  "Typography",
-  "Digital Art",
-  "Handcrafted",
-  "Series",
-  "Social",
+const IMAGES: GalleryImage[] = [
+  {
+    title: "Smashburger Restaurant Promo Video",
+    category: "VIDEO DESIGN",
+    context: "Edit of a promotional video piece exploring motion, food branding and engaging social media storytelling.",
+    year: "2025",
+    src: img_Smashburger_Video,
+    size: "wide",
+  },
+  {
+    title: "Smashburger Restaurant Christmas Promotion (TikTok)",
+    category: "VIDEO DESIGN",
+    context: "A short-form video concept designed for social media attention, establishing customer loyalty and fast brand communication.",
+    year: "2025",
+    src: img_Smashburger_Tiktok,
+    size: "tall",
+  },
+  {
+    title: "Alice in Wonderland Poster",
+    category: "POSTER DESIGN",
+    context: "A bold theater poster translating the surreal atmosphere of Alice in Wonderland into a strong graphic composition.",
+    year: "2025",
+    src: img_Theater_Poster,
+    size: "tall",
+  },
+  {
+    title: "The Great Search for Mrs. Mümmel",
+    category: "GAME CONCEPT",
+    context: "An interactive teaching media prototype using storytelling and playful interaction to support learning and exploration.",
+    year: "2025",
+    src: img_The_great_Search,
+    size: "wide",
+  },
+  {
+    title: "A Window in My Life",
+    category: "PAPERCRAFT",
+    context: "A handcrafted paper object exploring personal perspective, spatial layering and material storytelling.",
+    year: "2024",
+    src: img_A_Window_in_my_Life,
+    size: "tall",
+  },
+  {
+    title: "Smashburger Restaurant Christmas Promotion (Post)",
+    category: "SOCIAL MEDIA",
+    context: "A promotional Instagram story design created for quick visual impact, clear messaging and brand-related food communication.",
+    year: "2025",
+    src: img_Smashburger_Story,
+    size: "tall",
+  },
+  {
+    title: "Greek Mythology Illustration",
+    category: "ILLUSTRATION",
+    context: "A digital illustration focused on stylized character design, composition and expressive visual atmosphere.",
+    year: "2024",
+    src: img_Woman_Illustration,
+    size: "md",
+  },
+  {
+    title: "Life Tracking",
+    category: "VISUAL DESIGN",
+    context: "A visual data poster comparing one week of university life with one week on vacation through personal routines, mood, activity and media habits.",
+    year: "2025",
+    src: img_Visual_Design_Poster_3,
+    size: "wide",
+  },
+  {
+    title: "WLB-Willy",
+    category: "EMBODIED DESIGN",
+    context: "A concept poster for a library assistance robot, combining persona development, service design and visual communication.",
+    year: "2024",
+    src: img_Willy_Poster,
+    size: "tall",
+  },
+  {
+    title: "Theater Flyer Series",
+    category: "COMMUNICATION DESIGN",
+    context: "A compact flyer design combining event communication, visual storytelling and a consistent graphic direction.",
+    year: "2025",
+    src: img_Theater_Flyer,
+    size: "wide",
+  },
+  {
+    title: "Bembo Type Poster",
+    category: "TYPOGRAPHY",
+    context: "A typographic poster exploring the character, history and visual qualities of the typeface Bembo.",
+    year: "2024",
+    src: img_Typo_Poster,
+    size: "tall",
+  },
+  {
+    title: "Smashburger Restaurant Instagram Post",
+    category: "SOCIAL MEDIA",
+    context: "A social media post concept combining bold visuals, promotional messaging and a youthful visual tone.",
+    year: "2025",
+    src: img_Smashburger_Post,
+    size: "tall",
+  },
+  {
+    title: "WKV Website Redesign",
+    category: "WEB DESIGN",
+    context: "A website concept for the Württembergischer Kunstverein Stuttgart, focusing on clearer structure, navigation and visual hierarchy.",
+    year: "2025",
+    src: img_WKV_Website,
+    size: "tall",
+  },
+  {
+    title: "Ramen Illustration",
+    category: "ILLUSTRATION",
+    context: "A playful food illustration exploring color, detail and soft digital rendering.",
+    year: "2021",
+    src: img_Ramen_Illustration,
+    size: "md",
+  }
 ];
-
-const SIZES: GallerySize[] = ["lg", "sm", "tall", "md", "wide", "sm", "tall", "md", "sm", "lg", "tall", "md"];
-
-const ASPECT: Record<GallerySize, string> = {
-  lg: "aspect-[4/3] lg:aspect-[16/10]",
-  md: "aspect-[4/3]",
-  sm: "aspect-[4/3]",
-  wide: "aspect-[4/3] lg:aspect-[16/9]",
-  tall: "aspect-[4/3] lg:aspect-[4/5]",
-};
-
-const SPAN: Record<GallerySize, string> = {
-  lg: "lg:col-span-4",
-  wide: "lg:col-span-4",
-  md: "lg:col-span-3",
-  tall: "lg:col-span-2",
-  sm: "lg:col-span-2",
-};
-
-const IMAGES: GalleryImage[] = Array.from({ length: 12 }).map((_, i) => ({
-  title: `Untitled ${i + 1}`,
-  category: CATEGORIES[i % CATEGORIES.length],
-  context:
-    "Part of an ongoing exploration of form, material and rhythm. Created as a self-initiated study to push compositional boundaries.",
-  year: `${2023 + (i % 3)}`,
-  src: `https://picsum.photos/seed/archive-${i}/900/1100`,
-  size: SIZES[i],
-}));
 
 function GalleryPage() {
   const [active, setActive] = useState<number | null>(null);
@@ -112,13 +205,24 @@ function GalleryPage() {
               onClick={() => setActive(i)}
               className="group relative block overflow-hidden rounded-2xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_color-mix(in_oklab,var(--pink-strong)_70%,transparent)] text-left"
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
-                />
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/5">
+                {img.src.endsWith(".mp4") || img.src.endsWith(".mov") ? (
+                  <video
+                    src={img.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                  />
+                ) : (
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                  />
+                )}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-2 p-3">
                   <span className="font-display text-sm leading-tight tracking-tight text-white">
@@ -174,24 +278,39 @@ function GalleryPage() {
           </button>
 
           <div
-            className="flex max-h-[90vh] w-full max-w-6xl flex-col gap-6 overflow-hidden md:flex-row md:items-start"
+            className="flex max-h-[90vh] w-full max-w-6xl flex-col gap-6 overflow-y-auto rounded-3xl md:flex-row md:items-center md:overflow-hidden bg-black/20 md:bg-transparent"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={IMAGES[active].src}
-              alt={IMAGES[active].title}
-              className="max-h-[60vh] w-full object-contain md:max-h-[90vh] md:flex-1"
-            />
-            <div className="shrink-0 rounded-xl bg-card/30 p-6 text-foreground backdrop-blur-xl md:w-80">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-pink-strong">
-                {IMAGES[active].category} · {IMAGES[active].year}
-              </span>
-              <h3 className="mt-2 font-display text-2xl leading-tight tracking-tight">
-                {IMAGES[active].title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-foreground">
-                {IMAGES[active].context}
-              </p>
+            <div className="flex min-h-0 flex-1 items-center justify-center md:h-full md:rounded-2xl md:bg-black/20">
+              {IMAGES[active].src.endsWith(".mp4") || IMAGES[active].src.endsWith(".mov") ? (
+                <video
+                  src={IMAGES[active].src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="max-h-[50vh] w-full object-contain md:max-h-[90vh] md:rounded-2xl"
+                />
+              ) : (
+                <img
+                  src={IMAGES[active].src}
+                  alt={IMAGES[active].title}
+                  className="max-h-[50vh] w-full object-contain md:max-h-[90vh] md:rounded-2xl"
+                />
+              )}
+            </div>
+            <div className="shrink-0 p-6 text-foreground md:w-96 lg:w-[400px]">
+              <div className="rounded-2xl bg-card/50 p-6 shadow-2xl backdrop-blur-2xl">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-pink-strong">
+                  {IMAGES[active].category} · {IMAGES[active].year}
+                </span>
+                <h3 className="mt-2 font-display text-2xl leading-tight tracking-tight">
+                  {IMAGES[active].title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  {IMAGES[active].context}
+                </p>
+              </div>
             </div>
           </div>
         </div>

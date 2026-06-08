@@ -47,9 +47,9 @@ function ProjectsPage() {
       <BackButton />
       <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
         <SectionHeading
-          eyebrow="Projects · 2023 — 2025"
+          eyebrow="Projects · 2023 — 2026"
           title="Selected work."
-          subtitle="Six projects across UX, information design and visual systems. Click any tile to open the case study."
+          subtitle="Five projects across UX, information design and visual systems. Click any tile to open the case study."
         />
 
         {/* Filter pills */}

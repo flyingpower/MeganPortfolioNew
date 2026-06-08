@@ -3,6 +3,14 @@ import { Download } from "lucide-react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { BackButton } from "@/components/site/BackButton";
+import Information_Design from "../../content/CV_Portfolio/Information_Design.jpg";
+import Abitur from "../../content/CV_Portfolio/Abitur.jpg";
+import Primary_School from "../../content/CV_Portfolio/Primary_School.jpg";
+import UX_Design_Internship from "../../content/CV_Portfolio/UX_Design_Internship.jpg";
+import Service_Smashburger from "../../content/CV_Portfolio/Service_Smashburger.jpg";
+import Military_Service from "../../content/CV_Portfolio/Military_Service.jpg";
+import Student_Assistant from "../../content/CV_Portfolio/Student_Assistant.jpg";
+import Museum_Attendant from "../../content/CV_Portfolio/Museum_Attendant.jpg";
 
 
 export const Route = createFileRoute("/cv")({
@@ -39,33 +47,33 @@ const education: Item[] = [
     period: "09/2023 – 08/2024 · 03/2025 – present",
     title: "B.A. Information Design",
     org: "Hochschule der Medien, Stuttgart",
-    image: "https://picsum.photos/seed/edu-hdm/600/400",
+    image: Information_Design,
     details: [
-      "Focus on UX, visual communication and user-centered design.",
-      "Coursework across typography, interaction, and information systems.",
-      "Active in student projects bridging research and craft.",
+      "Studying at Hochschule der Medien Stuttgart.",
+      "Focus on UX, visual communication and digital design.",
+      "Working with Figma, Adobe tools and web technologies.",
     ],
   },
   {
     period: "06/2023",
     title: "Abitur (1.7)",
     org: "Martin-Gerbert-Gymnasium, Horb",
-    image: "https://picsum.photos/seed/edu-abi/600/400",
+    image: Abitur,
     details: [
-      "Advanced courses in English and Mathematics.",
-      "Graduated with a final grade of 1.7.",
-      "Involved in art and cultural extracurriculars.",
+      "Graduated with German university entrance qualification.",
+      "Final grade: 1.7.",
+      "Foundation for my design studies.",
     ],
   },
   {
     period: "09/2011 – 07/2015",
     title: "Primary School",
     org: "Grundschule Eutingen im Gäu",
-    image: "https://picsum.photos/seed/edu-grund/600/400",
+    image: Primary_School,
     details: [
-      "First steps in creative and structured learning.",
-      "Foundation in language, math, and arts.",
-      "Small village school setting.",
+      "Beginning of my educational path.",
+      "Early development of curiosity and creativity.",
+      "First structured learning environment.",
     ],
   },
 ];
@@ -75,51 +83,51 @@ const experience: Item[] = [
     period: "From 03/2026",
     title: "UX Design Internship",
     org: "Robert Bosch GmbH",
-    image: "https://picsum.photos/seed/exp-bosch/600/400",
+    image: UX_Design_Internship,
     details: [
-      "Joining the UX team for a hands-on industry placement.",
-      "Working on real product flows and design systems.",
-      "Bridging student practice with enterprise design.",
+      "UX Design internship at Bosch.",
+      "Working on enterprise UX and Figma prototypes.",
+      "Exploring AI-supported design workflows.",
     ],
   },
   {
     period: "06/2025 – 02/2026",
     title: "Service & Social Media Marketing",
     org: "Smashburger 0711, Stuttgart",
-    image: "https://picsum.photos/seed/exp-smash/600/400",
+    image: Service_Smashburger,
     details: [
-      "Front-of-house service in a fast-paced environment.",
-      "Created social content and small marketing campaigns.",
-      "Built confidence in customer communication.",
+      "Service work at Smashburger0711 Stuttgart.",
+      "Supporting social media marketing and content creation.",
+      "Experience with fast-paced customer communication.",
     ],
   },
   {
     period: "09/2024 – 02/2025",
     title: "Voluntary Military Service · Medical Corps",
     org: "Bundeswehr · Rheine & Müllheim",
-    image: "https://picsum.photos/seed/exp-bw/600/400",
+    image: Military_Service,
     details: [
-      "Basic training and medical specialization.",
-      "Teamwork and discipline under pressure.",
-      "Service in Rheine and Müllheim.",
+      "Voluntary military service in the Army Medical Service.",
+      "Worked in structured and high-responsibility environments.",
+      "Strengthened discipline, resilience and teamwork.",
     ],
   },
   {
     period: "2023 – 2024",
     title: "Student Assistant · Reception",
     org: "Württembergische Landesbibliothek, Stuttgart",
-    image: "https://picsum.photos/seed/exp-wlb/600/400",
+    image: Student_Assistant,
     details: [
-      "Reception, registration and visitor support.",
-      "Handling reservations and information requests.",
-      "Working alongside library staff and researchers.",
+      "Student assistant at Württembergische Landesbibliothek.",
+      "Reception, customer communication and library workflows.",
+      "Structured work in a public service environment.",
     ],
   },
   {
     period: "2022 – 2023",
     title: "Museum Attendant",
     org: "Experimenta Freudenstadt",
-    image: "https://picsum.photos/seed/exp-museum/600/400",
+    image: Museum_Attendant,
     details: [
       "Greeting and guiding museum visitors.",
       "Supporting interactive exhibits and events.",
@@ -164,15 +172,17 @@ function Timeline({
 }
 
 function HoverPanel({ item }: { item: Item }) {
+  const isLandscape = typeof window !== 'undefined' ?
+    (document.querySelector(`img[src="${item.image}"]`) as HTMLImageElement)?.naturalWidth >
+    (document.querySelector(`img[src="${item.image}"]`) as HTMLImageElement)?.naturalHeight : false;
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-pink-strong/30 bg-card/80 shadow-[0_20px_50px_-15px_color-mix(in_oklab,var(--pink-strong)_60%,transparent)] backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200">
-      <div className="aspect-[16/9] w-full overflow-hidden">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="h-full w-full object-cover"
-        />
-      </div>
+    <div className={`overflow-hidden rounded-2xl border border-pink-strong/30 bg-card/80 shadow-[0_20px_50px_-15px_color-mix(in_oklab,var(--pink-strong)_60%,transparent)] backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 ${isLandscape ? 'max-w-[600px]' : 'max-w-[440px]'}`}>
+      <img
+        src={item.image}
+        alt={item.title}
+        className="block h-auto w-full max-h-[60vh] object-contain bg-black/5"
+      />
       <div className="p-6">
         <p className="font-display text-xl">{item.title}</p>
         <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">

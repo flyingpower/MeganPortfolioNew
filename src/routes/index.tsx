@@ -214,7 +214,7 @@ function Index() {
       <section className="relative mx-auto max-w-7xl px-6 pt-14 pb-20 md:px-10 md:pt-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
-            eyebrow="Selected Work · 6 Projects"
+            eyebrow="Selected Work · 5 Projects"
             title="My work"
             subtitle="A curated selection across UX, information design and visual systems."
           />
