@@ -27,8 +27,7 @@ function Privacy() {
             <h2 className="font-display text-2xl text-foreground">1. Overview</h2>
             <p className="mt-3">
               The following notes provide a simple overview of what happens to your
-              personal data when you visit this website. (Placeholder — to be
-              replaced with legally binding text.)
+              personal data when you visit this website. (Lorem ipsum.)
             </p>
           </section>
 
