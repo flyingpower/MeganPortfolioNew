@@ -46,7 +46,7 @@ const education: Item[] = [
   {
     period: "09/2023 – 08/2024 · 03/2025 – present",
     title: "B.A. Information Design",
-    org: "Hochschule der Medien, Stuttgart",
+    org: "Hochschule der Medien · Stuttgart",
     image: Information_Design,
     details: [
       "Studying at Hochschule der Medien Stuttgart.",
