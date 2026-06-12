@@ -43,23 +43,23 @@ function AboutPage() {
       <div className="mt-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-7 md:col-start-1">
           <p className="text-xl leading-relaxed text-foreground md:text-2xl">
-            I'm Megan — a 20-year-old Information Design student at Hochschule
-            der Medien Stuttgart, with a strong focus on UX design, visual
-            communication and user-centered digital experiences.
+          I'm Megan — a 20-year-old Information Design student at Hochschule der Medien Stuttgart. 
+          I work somewhere between UX, visual communication and interactive things that 
+          need structure before they can feel easy.
           </p>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              My work lives at the intersection of structure and personality. I
-              love research, typographic detail, and the small interactions that
-              make a product feel considered. I'm just as interested in the
-              system behind a design as in the surface of it.
+            I like projects where I have to untangle something first: 
+            a confusing workflow, too much information, an unclear interface, 
+            or an idea that only exists as a rough sketch. My work ranges from 
+            enterprise UX and user research to app concepts, posters and small interactive games.
             </p>
             <p>
-              Outside of design I'm into art, languages, history, music and
-              fashion — all of which quietly shape how I think about visual
-              storytelling and rhythm. In 2026 I'll be joining{" "}
-              <span className="text-foreground">Robert Bosch GmbH</span> for a UX
-              design internship.
+            Outside of design, I care a lot about art, politics, history, languages, music and fashion. 
+            I think that's why I'm drawn to design that has both logic and atmosphere.In 2026, I joined 
+            {" "}
+              <span className="text-foreground">Robert Bosch GmbH</span> for a UX design internship, 
+              working on enterprise prototypes, Figma workflows and AI-supported design processes.
             </p>
             <p>
               I'm currently open to UX, product design and information design
@@ -70,8 +70,8 @@ function AboutPage() {
 
           <div className="mt-10 rounded-3xl bg-pink p-8 text-pink-foreground">
             <p className="font-display text-2xl leading-snug md:text-3xl">
-              "Good design is invisible until it isn't — I aim for the
-              <span className="italic"> calm in between</span>."
+              " Where systems meet stories, and
+              <span className="italic"> people still come first </span>."
             </p>
           </div>
 
@@ -110,7 +110,7 @@ function AboutPage() {
               ["Studying", "Information Design, HdM"],
               ["Focus", "UX · UI · Visual Design"],
               ["Languages", "German · English (C2) · French (B1/B2)"],
-              ["Available", "From March 2026"],
+              ["Available", "From September 2026"],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between gap-4 py-3">
                 <dt className="text-muted-foreground">{k}</dt>

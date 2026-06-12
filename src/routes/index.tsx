@@ -259,11 +259,10 @@ function Index() {
           </div>
           <div className="md:col-span-7">
             <p className="text-balance text-lg leading-relaxed text-muted-foreground md:text-xl">
-              I study Information Design at Hochschule der Medien Stuttgart, with
-              a focus on UX, visual communication and user-centered digital
-              experiences. I love translating complexity into clarity — through
-              research, type, structure and a little bit of softness.
-            </p>
+            I study Information Design at Hochschule der Medien Stuttgart,
+            focusing on UX, visual communication and user-centered 
+            digital experiences. I enjoy turning complex systems into clear, 
+            intuitive and visually engaging concepts — from enterprise UX to playful worlds that connect.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/about" className="btn-secondary">
                 More about me <ArrowUpRight size={16} className="btn-arrow" />

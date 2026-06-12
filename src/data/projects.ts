@@ -62,9 +62,9 @@ export const projects: Project[] = [
     description: "Designing new SAP Fiori applications for enterprise workflows at Bosch Digital.",
     year: "2026",
     role: "UX Design",
-    tools: ["Figma", "Miro"],
+    tools: ["Figma", "Figma Make", "Miro", "Stitch", "Claude"],
     cover: "from-green/55 via-green/20 to-background",
-    image: SAP_Overview,
+    image: SAP_Fiori,
     accent: "green",
     size: "wide",
     layoutVariant: 1,
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       {
         heading: "Context",
         body: "The projects were developed in the context of Bosch Digital, SAP and customer-related enterprise workflows. I worked on around ten SAP prototypes and several Miro boards, mainly using the SAP Fiori design system.\n\nSome projects focused on factory management, others on customer complaint processes. The goal was to translate complex workflows and customer requirements into clear, structured and presentable UX concepts.",
-        image: { src: SAP_Fiori, caption: "Figma Library · SAP Fiori" }
+        image: { src: SAP_Fiori, caption: "Figma Design System · SAP Fiori" }
       },
       {
         heading: "Challenge",
@@ -105,11 +105,11 @@ export const projects: Project[] = [
   {
     slug: "bird-app",
     title: "BIRD App",
-    category: "UX Prototype",
+    category: "Prototyping & Corporate Identity",
     description: "Educational search experience design for the platform 'Bildungsraum Digital'.",
-    year: "2025",
-    role: "UX & Visual Design",
-    tools: ["Figma"],
+    year: "2026",
+    role: "UX Design",
+    tools: ["Figma", "Figma Make"],
     cover: "from-pink/70 via-pink-soft to-background",
     image: BIRD_Screen,
     accent: "pink",
@@ -160,8 +160,8 @@ export const projects: Project[] = [
     category: "Soft- and Hardware development",
     description: "An interactive learning installation about thunderstorms, combining visuals, sound and physical interaction.",
     year: "2026",
-    role: "UX Design, Programming, Hardware",
-    tools: ["Arduino", "Figma", "Illustrator"],
+    role: "UX Design, Programming, Hardware, Illustrator",
+    tools: ["Arduino", "Figma", "Illustrator", "Processing", "ChatGPT"],
     cover: "from-pink/60 via-green/25 to-background",
     image: Game_Thumbnail,
     accent: "pink",
@@ -224,7 +224,7 @@ export const projects: Project[] = [
   {
     slug: "breuninger-beyond",
     title: "Breuninger Beyond App",
-    category: "Review and Improvement",
+    category: "UX Review and Improvement",
     description: "UX redesign of the loyalty area for the Breuninger mobile app to improve usability and clarity.",
     year: "2026",
     role: "UX Design, User Research",
@@ -310,7 +310,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Outcome",
-        body: "The system was perceived as visually clear, structured and professionally designed. However, several usability issues appeared repeatedly throughout the login and onboarding flow. The Single Sign-On logic was not always clearly communicated, password requirements were not visible early enough, and error messages were not always helpful.\n\nBased on these findings, we identified improvement areas such as clearer SSO communication, more transparent system status feedback, and a more consistent login and logout experience across platforms."
+        body: "The system was perceived as visually clear, structured and professionally designed. However, several usability issues appeared repeatedly throughout the login and onboarding flow. The Single Sign-On logic was not always clearly communicated, password requirements were not visible early enough, and error messages were not always helpful.\n\nBased on these findings, we identified improvement areas such as clearer SSO communication, more transparent system status feedback, and a more consistent login and logout experience across platforms. The insights were captured in a detailed report. "
       },
       {
         heading: "Learnings",
