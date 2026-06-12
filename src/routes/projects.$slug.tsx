@@ -108,7 +108,11 @@ function SmallImage({ label, cover, src }: { label: string; cover: string; src?:
         </div>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-y-auto p-2">
-        <img src={src} alt={label} className="h-auto w-full" />
+        {isVideo ? (
+          <video src={src} autoPlay loop controls playsInline className="h-auto w-full" />
+        ) : (
+          <img src={src} alt={label} className="h-auto w-full" />
+        )}
       </DialogContent>
     </Dialog>
   );

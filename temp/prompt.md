@@ -1,0 +1,1 @@
+- scale down the portrait image (bothhero and about page) to an acceptable size

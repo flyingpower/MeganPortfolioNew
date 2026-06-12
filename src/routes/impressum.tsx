@@ -27,8 +27,8 @@ function Imprint() {
             <h2 className="font-display text-2xl text-foreground">Information according to § 5 TMG</h2>
             <p className="mt-3">
               Megan Mielke<br />
-              Sample Street 1<br />
-              70173 Stuttgart<br />
+              Werfmershalde 7<br />
+              70190 Stuttgart<br />
               Germany
             </p>
           </section>
@@ -46,11 +46,23 @@ function Imprint() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl text-foreground">Disclaimer</h2>
+            <h2 className="font-display text-2xl text-foreground">Liability for Contents</h2>
             <p className="mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. (Placeholder — to be
-              replaced with legally binding text.)
+              As a service provider, I am responsible for my own content on these pages under general law, pursuant to § 7(1) TMG. According to §§ 8 to 10 TMG, however, as a service provider, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that suggest illegal activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the moment that knowledge of a specific breach of law is obtained. Upon notification of such breaches, I will remove this content immediately.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl text-foreground">Liability for Links</h2>
+            <p className="mt-3">
+              My website contains links to external third-party websites over whose content I have no control. Therefore, I cannot accept any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages. At the time of linking, the pages were checked for possible legal violations. No illegal content was identifiable at the time of linking. However, constant monitoring of the linked pages' content is not reasonable without specific evidence of a violation. Upon notification of violations, I will remove such links immediately.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-2xl text-foreground">Copyright</h2>
+            <p className="mt-3">
+              The content and works created by the page operators on these pages are subject to German copyright law. Reproduction, processing, distribution, and any kind of use beyond the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. Should you nevertheless become aware of a copyright infringement, please inform me accordingly. Upon notification of violations, I will remove such content immediately.
             </p>
           </section>
         </div>

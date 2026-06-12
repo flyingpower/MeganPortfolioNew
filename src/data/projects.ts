@@ -2,12 +2,14 @@
 import SAP_Fiori from "../../content/SAP_Bosch_Prototypes/SAP_Fiori.jpg";
 import SAP_Object from "../../content/SAP_Bosch_Prototypes/SAP_Object.jpg";
 import SAP_Overview from "../../content/SAP_Bosch_Prototypes/SAP_Overview.jpg";
+import SAP_thumb from "../../content/SAP_Bosch_Prototypes/thumb.jpg";
 
 // BIRD App
 import BIRD_Moodboard from "../../content/BIRD_App/BIRD_Moodboard.jpg";
 import BIRD_Screen from "../../content/BIRD_App/BIRD_Screen.jpg";
 import BIRD_Sketch from "../../content/BIRD_App/BIRD_Sketch.jpg";
 import BIRD_Video from "../../content/BIRD_App/BIRD_Video.mp4";
+import BIRD_thumb from "../../content/BIRD_App/thumb.jpg";
 
 // Blitz & Donner Science Game
 import Game_Arduino from "../../content/Blitz_&_Donner_Science_Game/Game_Arduino.jpg";
@@ -17,15 +19,18 @@ import Game_Illustrator from "../../content/Blitz_&_Donner_Science_Game/Game_Ill
 import Game_Storyboard from "../../content/Blitz_&_Donner_Science_Game/Game_Storyboard.jpg";
 import Game_Thumbnail from "../../content/Blitz_&_Donner_Science_Game/Game_Thumbnail.jpg";
 import Game_Video from "../../content/Blitz_&_Donner_Science_Game/Game_Video.mov";
+import Blitz_thumb from "../../content/Blitz_&_Donner_Science_Game/thumb.jpg";
 
 // Breuninger Beyond App
 import Beyond_Screen_Vouchers from "../../content/Breuninger_Beyond_App/Beyond_Screen_Vouchers.jpg";
 import Beyond_Thumbnail from "../../content/Breuninger_Beyond_App/Beyond_Thumbnail.jpg";
+import Beyond_thumb from "../../content/Breuninger_Beyond_App/thumb.jpg";
 
 // Festo User Testing & Research
 import Festo_Diagrams from "../../content/Festo_User_Testing_&_Research/Festo_Diagrams.jpg";
 import Festo_Login from "../../content/Festo_User_Testing_&_Research/Festo_Login.jpg";
 import Festo_Table from "../../content/Festo_User_Testing_&_Research/Festo_Table.jpg";
+import Festo_thumb from "../../content/Festo_User_Testing_&_Research/thumb.jpg";
 
 export type ProjectSize = "lg" | "md" | "sm" | "wide" | "tall";
 
@@ -48,6 +53,7 @@ export type Project = {
   tools: string[];
   cover: string; // gradient class
   image: string; // cover image path
+  thumbnail?: string; // 16:9 thumbnail for the overview page
   accent: "pink" | "green" | "neutral";
   size: ProjectSize;
   layoutVariant: 1 | 2 | 3 | 4 | 5;
@@ -65,6 +71,7 @@ export const projects: Project[] = [
     tools: ["Figma", "Figma Make", "Miro", "Stitch", "Claude"],
     cover: "from-green/55 via-green/20 to-background",
     image: SAP_Fiori,
+    thumbnail: SAP_thumb,
     accent: "green",
     size: "wide",
     layoutVariant: 1,
@@ -112,6 +119,7 @@ export const projects: Project[] = [
     tools: ["Figma", "Figma Make"],
     cover: "from-pink/70 via-pink-soft to-background",
     image: BIRD_Screen,
+    thumbnail: BIRD_thumb,
     accent: "pink",
     size: "tall",
     layoutVariant: 2,
@@ -164,6 +172,7 @@ export const projects: Project[] = [
     tools: ["Arduino", "Figma", "Illustrator", "Processing", "ChatGPT"],
     cover: "from-pink/60 via-green/25 to-background",
     image: Game_Thumbnail,
+    thumbnail: Blitz_thumb,
     accent: "pink",
     size: "tall",
     layoutVariant: 3,
@@ -231,6 +240,7 @@ export const projects: Project[] = [
     tools: ["Figma"],
     cover: "from-foreground/85 via-foreground/45 to-background",
     image: Beyond_Thumbnail,
+    thumbnail: Beyond_thumb,
     accent: "neutral",
     size: "wide",
     layoutVariant: 4,
@@ -277,6 +287,7 @@ export const projects: Project[] = [
     tools: ["Figjam"],
     cover: "from-green/65 via-pink/25 to-background",
     image: Festo_Login,
+    thumbnail: Festo_thumb,
     accent: "green",
     size: "md",
     layoutVariant: 5,

@@ -78,15 +78,14 @@ function ContactPage() {
           <div className="mt-6 grid gap-3 text-sm">
             <p className="text-muted-foreground">Find me online</p>
             <div className="flex flex-wrap gap-2">
-              {["LinkedIn"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="rounded-full border border-hairline bg-card/40 backdrop-blur-md px-4 py-2 transition-all hover:border-pink-strong hover:bg-pink-strong hover:text-pink-foreground"
-                >
-                  {s}
-                </a>
-              ))}
+              <a
+                href="https://www.linkedin.com/in/megan-mielke-b53068285"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-hairline bg-card/40 backdrop-blur-md px-4 py-2 transition-all hover:border-pink-strong hover:bg-pink-strong hover:text-pink-foreground"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>

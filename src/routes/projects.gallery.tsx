@@ -287,7 +287,7 @@ function GalleryPage() {
                   src={IMAGES[active].src}
                   autoPlay
                   loop
-                  muted
+                  controls
                   playsInline
                   className="max-h-[50vh] w-full object-contain md:max-h-[90vh] md:rounded-2xl"
                 />

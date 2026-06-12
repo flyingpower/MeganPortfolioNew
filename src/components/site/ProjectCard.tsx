@@ -15,10 +15,15 @@ const ASPECT: Record<ProjectSize, string> = {
 export function ProjectCard({
   project,
   index = 0,
+  forceSixteenNine = false,
 }: {
   project: Project;
   index?: number;
+  forceSixteenNine?: boolean;
 }) {
+  const displayImage = project.thumbnail || project.image;
+  const aspectClass = forceSixteenNine ? "aspect-[16/9]" : (ASPECT[project.size] ?? "aspect-[4/3]");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -33,13 +38,13 @@ export function ProjectCard({
         className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/40 bg-card/50 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-pink-strong/50 hover:shadow-[0_20px_50px_-15px_color-mix(in_oklab,var(--pink-strong)_70%,transparent)] active:scale-[0.985]"
       >
         {/* IMAGE */}
-        <div className={`relative w-full overflow-hidden ${ASPECT[project.size] ?? "aspect-[4/3]"}`}>
+        <div className={`relative w-full overflow-hidden flex-1 ${aspectClass}`}>
 
           <img
-            src={project.image}
+            src={displayImage}
             alt={project.title}
             loading="lazy"
-            className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-active:scale-105 group-active:grayscale-0 group-focus-visible:scale-105 group-focus-visible:grayscale-0"
+            className={`h-full w-full object-cover ${!forceSixteenNine && project.slug === "bird-app" ? "object-right" : "object-center"} grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-active:scale-105 group-active:grayscale-0 group-focus-visible:scale-105 group-focus-visible:grayscale-0`}
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/90 to-transparent" />
 
@@ -54,7 +59,7 @@ export function ProjectCard({
 
 
         {/* TEXT */}
-        <div className="flex flex-1 flex-col p-4">
+        <div className="flex flex-col p-4">
           <div className="flex items-baseline justify-between gap-3">
             <h3 className="font-display text-lg leading-tight tracking-tight">
               {project.title}

@@ -1,6 +1,0 @@
-- Zoom more into the Overlay Images so there’s no border on the left and right, if there’s no border, don’t zoom in
-- Projects page: all cards are the same size and images are all zoomed in, so they’re the same format 16:9)
-- change the cover images of the projects „BIRD“ and „Blitz & Donner“ to the new images BIRD_Cover and Game_Cover, scale both images down to an acceptable size
-- make sure all the videos are playable in the big view. 
-- Contact Page: The Button LinkedIn leads to the link: www.linkedin.com/in/megan-mielke-b53068285
-- scale down the portrait image (both hero and about page) to an acceptable size

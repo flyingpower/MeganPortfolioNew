@@ -240,7 +240,7 @@ function Index() {
                     : "lg:col-span-2";
             return (
               <div key={project.slug} className={span}>
-                <ProjectCard project={project} index={i} />
+                <ProjectCard project={project} index={i} forceSixteenNine={false} />
               </div>
             );
           })}
