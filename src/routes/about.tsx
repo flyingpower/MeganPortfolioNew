@@ -39,26 +39,23 @@ function AboutPage() {
     <article className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
       <SectionHeading eyebrow="About" title="A creative mind for clear systems." />
 
-
       <div className="mt-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-7 md:col-start-1">
           <p className="text-xl leading-relaxed text-foreground md:text-2xl">
-          I'm Megan — a 20-year-old Information Design student at Hochschule der Medien Stuttgart. 
-          I work somewhere between UX, visual communication and interactive things that 
-          need structure before they can feel easy.
+            I'm Megan - a 20-year-old Information Design student at Hochschule der Medien Stuttgart.
+            I work somewhere between UX, visual communication and digital experiences
+            that feel structured, clear and still distinctly human.
           </p>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-            I like projects where I have to untangle something first: 
-            a confusing workflow, too much information, an unclear interface, 
-            or an idea that only exists as a rough sketch. My work ranges from 
-            enterprise UX and user research to app concepts, posters and small interactive games.
+              I care about design that works for people, not just for the screen. Good UX should guide without getting in the way.
+              It should make the next step feel clear, reduce unnecessary effort, and let people focus on what they came to do.
             </p>
             <p>
-            Outside of design, I care a lot about art, politics, history, languages, music and fashion. 
-            I think that's why I'm drawn to design that has both logic and atmosphere.In 2026, I joined 
-            {" "}
-              <span className="text-foreground">Robert Bosch GmbH</span> for a UX design internship, 
+              Outside of design, I care a lot about art, politics, history, languages, music and fashion.
+              I think that's why I'm drawn to design that has both logic and atmosphere. In 2026, I joined
+              {" "}
+              <span className="text-foreground">Robert Bosch GmbH</span> for a UX design internship,
               working on enterprise prototypes, Figma workflows and AI-supported design processes.
             </p>
             <p>
@@ -70,8 +67,8 @@ function AboutPage() {
 
           <div className="mt-10 rounded-3xl bg-pink p-8 text-pink-foreground">
             <p className="font-display text-2xl leading-snug md:text-3xl">
-              " Where systems meet stories, and
-              <span className="italic"> people still come first </span>."
+              " I’m not afraid of the unusual  — <br/>
+              <span className="italic">I’m afraid of bad UX </span>."
             </p>
           </div>
 
