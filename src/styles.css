@@ -202,17 +202,28 @@
   }
 
   @keyframes marquee-x {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
   .animate-marquee {
     animation: marquee-x 40s linear infinite;
   }
 
   @keyframes blob-float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33%      { transform: translate(20px, -30px) scale(1.05); }
-    66%      { transform: translate(-15px, 20px) scale(0.97); }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(20px, -30px) scale(1.05);
+    }
+    66% {
+      transform: translate(-15px, 20px) scale(0.97);
+    }
   }
   .animate-blob {
     animation: blob-float 18s ease-in-out infinite;
@@ -238,7 +249,7 @@
   }
   .btn-dark {
     @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 active:scale-95 bg-foreground text-background hover:bg-foreground/90 focus-visible:outline-none;
-    border: 1px solid rgba(255,255,255,0.35);
+    border: 1px solid rgba(255, 255, 255, 0.35);
   }
   /* Arrow rotates to horizontal (pointing right) on hover/active/focus of the button */
   .btn-arrow {
@@ -260,5 +271,3 @@
     transform: rotate(45deg);
   }
 }
-
-

@@ -1,4 +1,5 @@
 ## SAP Design for Bosch
+
 Design new SAP Fiori applications for Bosch
 
 Year: 2026
@@ -36,13 +37,13 @@ I worked in a two-person team with my supervisor. My main responsibility was cre
 
 My tasks included:
 
-*   creating SAP Fiori-based Figma prototypes
-*   translating customer feedback into UX concepts
-*   structuring requirements and user stories in Miro
-*   preparing prototype presentations
-*   working with AI-supported tools such as Stitch
-*   exploring Figma MCP Server with Visual Studio Code
-*   supporting AI-assisted design and development workflows
+- creating SAP Fiori-based Figma prototypes
+- translating customer feedback into UX concepts
+- structuring requirements and user stories in Miro
+- preparing prototype presentations
+- working with AI-supported tools such as Stitch
+- exploring Figma MCP Server with Visual Studio Code
+- supporting AI-assisted design and development workflows
 
 ### Process
 

@@ -2,4 +2,4 @@
 - Adapt tools on every project card to fit tools in the corresponding project page header
 - All Videos must have sound and basic web player controls when in overlay view
 - Videos dont laod rn when in overlay view
-- 
+-

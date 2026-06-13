@@ -1,5 +1,6 @@
 ## Festo UX Review
-Analyse UX problems  
+
+Analyse UX problems
 
 Year: 2026
 Role: User Research, User Testing
@@ -36,12 +37,12 @@ I also contributed to structuring the research findings so they could be compare
 
 My tasks included:
 
-*   analyzing INTUI questionnaire results
-*   interpreting AttrakDiff data
-*   connecting quantitative metrics with qualitative observations
-*   supporting the evaluation of usability problems
-*   helping structure findings across participants
-*   contributing to the final recommendations
+- analyzing INTUI questionnaire results
+- interpreting AttrakDiff data
+- connecting quantitative metrics with qualitative observations
+- supporting the evaluation of usability problems
+- helping structure findings across participants
+- contributing to the final recommendations
 
 ### Process
 
@@ -52,7 +53,6 @@ For the usability test, we created a structured moderation guide including an in
 The tests were conducted remotely via Zoom with screen sharing. During the sessions, participants were asked to think aloud so we could understand not only what they did, but also what they expected, questioned or found confusing.
 
 After the sessions, we reviewed the recordings, documented observations, identified Critical Incidents and grouped recurring usability issues into broader themes. To support the qualitative findings, we also used quantitative methods such as Task Success Rate, INTUI and AttrakDiff.
-
 
 ({Image: Festo_Diagrams}
 Context: Quantitative Findings

@@ -27,11 +27,46 @@ export function Footer() {
             Navigate
           </p>
           <ul className="mt-3 space-y-1">
-            <li><Link to="/about" className="story-link inline-block hover:text-pink-strong transition-colors">About</Link></li>
-            <li><Link to="/projects" className="story-link inline-block hover:text-pink-strong transition-colors">Projects</Link></li>
-            <li><Link to="/skills" className="story-link inline-block hover:text-pink-strong transition-colors">Skills</Link></li>
-            <li><Link to="/cv" className="story-link inline-block hover:text-pink-strong transition-colors">CV</Link></li>
-            <li><Link to="/contact" className="story-link inline-block hover:text-pink-strong transition-colors">Contact</Link></li>
+            <li>
+              <Link
+                to="/about"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/projects"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/skills"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/cv"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                CV
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="text-sm">
@@ -39,8 +74,22 @@ export function Footer() {
             Legal
           </p>
           <ul className="mt-3 space-y-1">
-            <li><Link to="/impressum" className="story-link inline-block hover:text-pink-strong transition-colors">Imprint</Link></li>
-            <li><Link to="/datenschutzerklaerung" className="story-link inline-block hover:text-pink-strong transition-colors">Privacy Policy</Link></li>
+            <li>
+              <Link
+                to="/impressum"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                Imprint
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/datenschutzerklaerung"
+                className="story-link inline-block hover:text-pink-strong transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,13 +109,18 @@ export function Footer() {
                   fill="currentColor"
                 />
               ))}
-              <circle cx="16" cy="16" r="2.2" className="text-pink-foreground" fill="currentColor" />
+              <circle
+                cx="16"
+                cy="16"
+                r="2.2"
+                className="text-pink-foreground"
+                fill="currentColor"
+              />
             </svg>
           </div>
           <span className="text-right">Designed & built with care.</span>
         </div>
       </div>
-
     </footer>
   );
 }

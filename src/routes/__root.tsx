@@ -40,12 +40,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-3xl">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on my end.
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">Something went wrong on my end.</p>
         <div className="mt-6 flex justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-foreground px-5 py-2 text-sm text-background"
           >
             Try again
@@ -75,11 +76,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Megan Mielke — Information Design & UX" },
       { name: "twitter:title", content: "Megan Mielke — Information Design & UX" },
-      { name: "description", content: "A modern, creative portfolio website for an Information Design student and aspiring UX designer." },
-      { property: "og:description", content: "A modern, creative portfolio website for an Information Design student and aspiring UX designer." },
-      { name: "twitter:description", content: "A modern, creative portfolio website for an Information Design student and aspiring UX designer." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bfcd2321-6f26-481b-a825-0178789dba71/id-preview-caec5184--c40487ba-a662-4b43-9ef6-3d1e8716e6b9.lovable.app-1780586553683.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bfcd2321-6f26-481b-a825-0178789dba71/id-preview-caec5184--c40487ba-a662-4b43-9ef6-3d1e8716e6b9.lovable.app-1780586553683.png" },
+      {
+        name: "description",
+        content:
+          "A modern, creative portfolio website for an Information Design student and aspiring UX designer.",
+      },
+      {
+        property: "og:description",
+        content:
+          "A modern, creative portfolio website for an Information Design student and aspiring UX designer.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "A modern, creative portfolio website for an Information Design student and aspiring UX designer.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bfcd2321-6f26-481b-a825-0178789dba71/id-preview-caec5184--c40487ba-a662-4b43-9ef6-3d1e8716e6b9.lovable.app-1780586553683.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bfcd2321-6f26-481b-a825-0178789dba71/id-preview-caec5184--c40487ba-a662-4b43-9ef6-3d1e8716e6b9.lovable.app-1780586553683.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

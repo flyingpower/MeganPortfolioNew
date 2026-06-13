@@ -22,9 +22,7 @@ export function SectionHeading({ eyebrow, title, subtitle, align = "left" }: Pro
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-          {subtitle}
-        </p>
+        <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">{subtitle}</p>
       )}
     </div>
   );

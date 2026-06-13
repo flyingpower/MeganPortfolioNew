@@ -25,8 +25,7 @@ export const Route = createFileRoute("/projects/gallery")({
       { title: "Visual Archive — Megan Mielke" },
       {
         name: "description",
-        content:
-          "A gallery of visual, editorial and experimental design work by Megan Mielke.",
+        content: "A gallery of visual, editorial and experimental design work by Megan Mielke.",
       },
       { property: "og:title", content: "Visual Archive — Megan Mielke" },
       {
@@ -55,7 +54,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Smashburger Restaurant Promo Video",
     category: "VIDEO DESIGN",
-    context: "Edit of a promotional video piece exploring motion, food branding and engaging social media storytelling.",
+    context:
+      "Edit of a promotional video piece exploring motion, food branding and engaging social media storytelling.",
     year: "2025",
     src: img_Smashburger_Video,
     size: "wide",
@@ -63,7 +63,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Smashburger Restaurant Christmas Promotion (TikTok)",
     category: "VIDEO DESIGN",
-    context: "A short-form video concept designed for social media attention, establishing customer loyalty and fast brand communication.",
+    context:
+      "A short-form video concept designed for social media attention, establishing customer loyalty and fast brand communication.",
     year: "2025",
     src: img_Smashburger_Tiktok,
     size: "tall",
@@ -71,7 +72,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Alice in Wonderland Poster",
     category: "POSTER DESIGN",
-    context: "A bold theater poster translating the surreal atmosphere of Alice in Wonderland into a strong graphic composition.",
+    context:
+      "A bold theater poster translating the surreal atmosphere of Alice in Wonderland into a strong graphic composition.",
     year: "2025",
     src: img_Theater_Poster,
     size: "tall",
@@ -79,7 +81,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "The Great Search for Mrs. Mümmel",
     category: "GAME CONCEPT",
-    context: "An interactive teaching media prototype using storytelling and playful interaction to support learning and exploration.",
+    context:
+      "An interactive teaching media prototype using storytelling and playful interaction to support learning and exploration.",
     year: "2025",
     src: img_The_great_Search,
     size: "wide",
@@ -87,7 +90,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "A Window in My Life",
     category: "PAPERCRAFT",
-    context: "A handcrafted paper object exploring personal perspective, spatial layering and material storytelling.",
+    context:
+      "A handcrafted paper object exploring personal perspective, spatial layering and material storytelling.",
     year: "2024",
     src: img_A_Window_in_my_Life,
     size: "tall",
@@ -95,7 +99,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Smashburger Restaurant Christmas Promotion (Post)",
     category: "SOCIAL MEDIA",
-    context: "A promotional Instagram story design created for quick visual impact, clear messaging and brand-related food communication.",
+    context:
+      "A promotional Instagram story design created for quick visual impact, clear messaging and brand-related food communication.",
     year: "2025",
     src: img_Smashburger_Story,
     size: "tall",
@@ -103,7 +108,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Greek Mythology Illustration",
     category: "ILLUSTRATION",
-    context: "A digital illustration focused on stylized character design, composition and expressive visual atmosphere.",
+    context:
+      "A digital illustration focused on stylized character design, composition and expressive visual atmosphere.",
     year: "2024",
     src: img_Woman_Illustration,
     size: "md",
@@ -111,7 +117,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Life Tracking",
     category: "VISUAL DESIGN",
-    context: "A visual data poster comparing one week of university life with one week on vacation through personal routines, mood, activity and media habits.",
+    context:
+      "A visual data poster comparing one week of university life with one week on vacation through personal routines, mood, activity and media habits.",
     year: "2025",
     src: img_Visual_Design_Poster_3,
     size: "wide",
@@ -119,7 +126,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "WLB-Willy",
     category: "EMBODIED DESIGN",
-    context: "A concept poster for a library assistance robot, combining persona development, service design and visual communication.",
+    context:
+      "A concept poster for a library assistance robot, combining persona development, service design and visual communication.",
     year: "2024",
     src: img_Willy_Poster,
     size: "tall",
@@ -127,7 +135,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Theater Flyer Series",
     category: "COMMUNICATION DESIGN",
-    context: "A compact flyer design combining event communication, visual storytelling and a consistent graphic direction.",
+    context:
+      "A compact flyer design combining event communication, visual storytelling and a consistent graphic direction.",
     year: "2025",
     src: img_Theater_Flyer,
     size: "wide",
@@ -135,7 +144,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Bembo Type Poster",
     category: "TYPOGRAPHY",
-    context: "A typographic poster exploring the character, history and visual qualities of the typeface Bembo.",
+    context:
+      "A typographic poster exploring the character, history and visual qualities of the typeface Bembo.",
     year: "2024",
     src: img_Typo_Poster,
     size: "tall",
@@ -143,7 +153,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "Smashburger Restaurant Instagram Post",
     category: "SOCIAL MEDIA",
-    context: "A social media post concept combining bold visuals, promotional messaging and a youthful visual tone.",
+    context:
+      "A social media post concept combining bold visuals, promotional messaging and a youthful visual tone.",
     year: "2025",
     src: img_Smashburger_Post,
     size: "tall",
@@ -151,7 +162,8 @@ const IMAGES: GalleryImage[] = [
   {
     title: "WKV Website Redesign",
     category: "WEB DESIGN",
-    context: "A website concept for the Württembergischer Kunstverein Stuttgart, focusing on clearer structure, navigation and visual hierarchy.",
+    context:
+      "A website concept for the Württembergischer Kunstverein Stuttgart, focusing on clearer structure, navigation and visual hierarchy.",
     year: "2025",
     src: img_WKV_Website,
     size: "tall",
@@ -163,7 +175,7 @@ const IMAGES: GalleryImage[] = [
     year: "2021",
     src: img_Ramen_Illustration,
     size: "md",
-  }
+  },
 ];
 
 function GalleryPage() {
@@ -175,8 +187,7 @@ function GalleryPage() {
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setActive(null);
-      if (e.key === "ArrowRight")
-        setActive((a) => (a === null ? a : (a + 1) % IMAGES.length));
+      if (e.key === "ArrowRight") setActive((a) => (a === null ? a : (a + 1) % IMAGES.length));
       if (e.key === "ArrowLeft")
         setActive((a) => (a === null ? a : (a - 1 + IMAGES.length) % IMAGES.length));
     };

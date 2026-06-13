@@ -5,7 +5,6 @@ import { toast } from "sonner";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { BackButton } from "@/components/site/BackButton";
 
-
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -48,96 +47,91 @@ function ContactPage() {
 
   return (
     <>
-    <BackButton />
-    <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
+      <BackButton />
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24">
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <SectionHeading eyebrow="Contact" title="Let's make something thoughtful." />
+            <p className="mt-6 text-lg text-muted-foreground">
+              Whether it's a collaboration, a freelance project or just a friendly hello — my inbox
+              is open.
+            </p>
 
-      <div className="grid gap-16 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <SectionHeading
-            eyebrow="Contact"
-            title="Let's make something thoughtful."
-          />
-          <p className="mt-6 text-lg text-muted-foreground">
-            Whether it's a collaboration, a freelance project or just a friendly
-            hello — my inbox is open.
-          </p>
-
-          <a
-            href="mailto:megan@mymielke.de"
-            className="mt-10 flex items-center gap-3 rounded-2xl border border-hairline p-5 transition-colors hover:bg-card"
-          >
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-pink text-pink-foreground">
-              <Mail size={16} />
-            </span>
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</p>
-              <p className="font-display text-xl">megan@mymielke.de</p>
-            </div>
-          </a>
-
-          <div className="mt-6 grid gap-3 text-sm">
-            <p className="text-muted-foreground">Find me online</p>
-            <div className="flex flex-wrap gap-2">
-              <a
-                href="https://www.linkedin.com/in/megan-mielke-b53068285"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-hairline bg-card/40 backdrop-blur-md px-4 py-2 transition-all hover:border-pink-strong hover:bg-pink-strong hover:text-pink-foreground"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-3xl border border-hairline bg-card p-8 md:col-span-7 md:p-10"
-        >
-          <div className="grid gap-5">
-            <Field
-              label="Your name"
-              value={form.name}
-              onChange={(v) => setForm({ ...form, name: v })}
-              placeholder="Jane Doe"
-            />
-            <Field
-              label="Email"
-              type="email"
-              value={form.email}
-              onChange={(v) => setForm({ ...form, email: v })}
-              placeholder="jane@example.com"
-            />
-            <div className="grid gap-2">
-              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                Message
-              </label>
-              <textarea
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                rows={6}
-                placeholder="Tell me a bit about your project or idea…"
-                className="w-full resize-none rounded-2xl border border-hairline bg-background px-4 py-3 text-base outline-none transition-colors focus:border-foreground"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={sending}
-              className="group inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm text-background transition-colors hover:bg-foreground/90 disabled:opacity-60"
+            <a
+              href="mailto:megan@mymielke.de"
+              className="mt-10 flex items-center gap-3 rounded-2xl border border-hairline p-5 transition-colors hover:bg-card"
             >
-              {sending ? "Sending…" : "Send message"}
-              <Send
-                size={14}
-                className="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
-              />
-            </button>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-pink text-pink-foreground">
+                <Mail size={16} />
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</p>
+                <p className="font-display text-xl">megan@mymielke.de</p>
+              </div>
+            </a>
+
+            <div className="mt-6 grid gap-3 text-sm">
+              <p className="text-muted-foreground">Find me online</p>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href="https://www.linkedin.com/in/megan-mielke-b53068285"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-hairline bg-card/40 backdrop-blur-md px-4 py-2 transition-all hover:border-pink-strong hover:bg-pink-strong hover:text-pink-foreground"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-    </section>
+
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-3xl border border-hairline bg-card p-8 md:col-span-7 md:p-10"
+          >
+            <div className="grid gap-5">
+              <Field
+                label="Your name"
+                value={form.name}
+                onChange={(v) => setForm({ ...form, name: v })}
+                placeholder="Jane Doe"
+              />
+              <Field
+                label="Email"
+                type="email"
+                value={form.email}
+                onChange={(v) => setForm({ ...form, email: v })}
+                placeholder="jane@example.com"
+              />
+              <div className="grid gap-2">
+                <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Message
+                </label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  rows={6}
+                  placeholder="Tell me a bit about your project or idea…"
+                  className="w-full resize-none rounded-2xl border border-hairline bg-background px-4 py-3 text-base outline-none transition-colors focus:border-foreground"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={sending}
+                className="group inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm text-background transition-colors hover:bg-foreground/90 disabled:opacity-60"
+              >
+                {sending ? "Sending…" : "Send message"}
+                <Send
+                  size={14}
+                  className="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
+                />
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </>
   );
-
 }
 
 function Field({

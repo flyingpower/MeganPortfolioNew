@@ -36,7 +36,13 @@ export function Nav() {
                   fill="currentColor"
                 />
               ))}
-              <circle cx="16" cy="16" r="2.2" className="text-pink-foreground" fill="currentColor" />
+              <circle
+                cx="16"
+                cy="16"
+                r="2.2"
+                className="text-pink-foreground"
+                fill="currentColor"
+              />
             </svg>
           </Link>
         </div>
@@ -56,11 +62,7 @@ export function Nav() {
           ))}
         </nav>
 
-        <button
-          aria-label="Toggle menu"
-          className="md:hidden"
-          onClick={() => setOpen((v) => !v)}
-        >
+        <button aria-label="Toggle menu" className="md:hidden" onClick={() => setOpen((v) => !v)}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>

@@ -44,7 +44,8 @@ export function VisualArchiveCTA() {
             Visual Archive
           </h3>
           <p className="mt-2 max-w-md text-sm text-muted-foreground">
-            A curated gallery of visual, editorial and experimental design work — posters, typography, digital art and more.
+            A curated gallery of visual, editorial and experimental design work — posters,
+            typography, digital art and more.
           </p>
         </div>
 

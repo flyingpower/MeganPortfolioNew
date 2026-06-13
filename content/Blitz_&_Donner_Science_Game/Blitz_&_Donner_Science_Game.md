@@ -1,4 +1,5 @@
-## Blitz & Donner 
+## Blitz & Donner
+
 Educational game
 
 Year: 2026
@@ -19,7 +20,7 @@ The project focuses on children aged 9 to 14. At this age, basic scientific conc
 The installation explains how thunderstorms form, why lightning and thunder are perceived at different times and how people can protect themselves during a storm. The final submission included a physical box with Arduino hardware, Processing code and a project video.
 
 ({Image: Game_Thumbnail}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Start Screen)
 
 ### Challenge
@@ -34,14 +35,14 @@ I developed the project independently, from concept to final prototype.
 
 My tasks included:
 
-*   defining the topic and learning goal
-*   creating the storyboard and interaction flow
-*   designing the visual style in Figma and Illustrator
-*   building the Processing application
-*   connecting Arduino input and output
-*   implementing button, potentiometer and LED interaction
-*   designing and constructing the physical box
-*   documenting the process and creating the final submission video
+- defining the topic and learning goal
+- creating the storyboard and interaction flow
+- designing the visual style in Figma and Illustrator
+- building the Processing application
+- connecting Arduino input and output
+- implementing button, potentiometer and LED interaction
+- designing and constructing the physical box
+- documenting the process and creating the final submission video
 
 ### Process
 
@@ -50,30 +51,28 @@ The project started with the question of which scientific topic could be explain
 I first created hand-drawn storyboards to define the flow of the experience. The application is structured like a small story: the sky gets darker, rain starts, warm air rises, electrical charges separate, lightning appears and thunder follows with a delay.
 
 ({Image: Game_Storyboard}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Storyboard Excerpt)
 
 After the storyboard phase, I designed the screens and graphic elements in Figma and Illustrator. The visual style is friendly and playful, inspired by soft shapes and game-like learning environments. I wanted the installation to feel inviting rather than frightening.
 
 ({Image: Game_Figma1}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Figma Screens 1)
 
 ({Image: Game_Figma2}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Figma Screens 2)
 
 ({Image: Game_Illustrator}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Digital Illustrations)
-
 
 The technical implementation was built with Processing and Arduino. The button is used to move through the learning phases, the potentiometer allows users to enter values or choose options, and the LED gives physical feedback when lightning appears.
 
 ({Image: Game_Arduino}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Arduino Circuit Diagram)
-
 
 ### Interaction
 
@@ -90,7 +89,7 @@ The final result was an interactive Arduino-Processing installation presented as
 The project combined digital storytelling with tangible interaction and showed how scientific content can be made more accessible through multisensory design.
 
 ({Image: Game_Video}
-Context: Blitz & Donner Game 
+Context: Blitz & Donner Game
 Placeholder: Final Game (including interactive Arduino Controller))
 
 ### Learnings

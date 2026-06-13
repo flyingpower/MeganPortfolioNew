@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getProject, projects, type Project } from "@/data/projects";
 import { BackButton } from "@/components/site/BackButton";
 
-
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
     const project = getProject(params.slug);
@@ -42,17 +41,15 @@ export const Route = createFileRoute("/projects/$slug")({
   errorComponent: ({ reset }) => (
     <div className="mx-auto max-w-2xl px-6 py-24 text-center">
       <h1 className="font-display text-3xl">Couldn't load this case study.</h1>
-      <button onClick={reset} className="mt-6 underline">Try again</button>
+      <button onClick={reset} className="mt-6 underline">
+        Try again
+      </button>
     </div>
   ),
   component: CaseStudy,
 });
 
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Expand } from "lucide-react";
 import { useState } from "react";
 
@@ -70,20 +67,9 @@ function SmallImage({ label, cover, src }: { label: string; cover: string; src?:
         >
           {src ? (
             isVideo ? (
-              <video
-                src={src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="block h-auto w-full"
-              />
+              <video src={src} autoPlay loop muted playsInline className="block h-auto w-full" />
             ) : (
-              <img
-                src={src}
-                alt={label}
-                className="block h-auto w-full"
-              />
+              <img src={src} alt={label} className="block h-auto w-full" />
             )
           ) : (
             <div className={`aspect-[16/9] w-full bg-gradient-to-br ${cover}`} />
@@ -118,6 +104,27 @@ function SmallImage({ label, cover, src }: { label: string; cover: string; src?:
   );
 }
 
+function ContentRenderer({ text }: { text: string }) {
+  const parts = text.split("\n\n");
+  return (
+    <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground md:text-[17px]">
+      {parts.map((part, i) => {
+        if (part.startsWith("* ")) {
+          const lines = part.split("\n");
+          return (
+            <ul key={i} className="list-disc pl-5 space-y-1">
+              {lines.map((line, j) => (
+                <li key={j}>{line.replace(/^\*\s*/, "")}</li>
+              ))}
+            </ul>
+          );
+        }
+        return <p key={i}>{part}</p>;
+      })}
+    </div>
+  );
+}
+
 function CaseStudy() {
   const { project } = Route.useLoaderData() as { project: Project };
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
@@ -127,7 +134,6 @@ function CaseStudy() {
   return (
     <article>
       <BackButton />
-
 
       {/* HERO — text-first */}
       <header className="mx-auto max-w-3xl px-6 pt-10 pb-12 md:pt-14 md:pb-16">
@@ -184,12 +190,14 @@ function CaseStudy() {
                   {section.heading}
                 </h2>
               </div>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-[17px]">
-                {section.body}
-              </p>
+              <ContentRenderer text={section.body} />
               {section.image && (
                 <div className="mt-6">
-                  <SmallImage label={section.image.caption} cover={project.cover} src={section.image.src} />
+                  <SmallImage
+                    label={section.image.caption}
+                    cover={project.cover}
+                    src={section.image.src}
+                  />
                 </div>
               )}
             </motion.section>
@@ -215,9 +223,7 @@ function CaseStudy() {
                 className="group flex items-center justify-between rounded-2xl border border-white/40 bg-card/50 backdrop-blur-xl p-4 transition-all hover:-translate-y-0.5 hover:border-pink-strong hover:bg-pink-strong hover:text-pink-foreground active:scale-[0.985]"
               >
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] opacity-60">
-                    {p.category}
-                  </p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] opacity-60">{p.category}</p>
                   <p className="font-display mt-1 text-lg">{p.title}</p>
                 </div>
                 <ArrowUpRight size={16} className="transition-transform group-hover:rotate-45" />

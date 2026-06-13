@@ -11,7 +11,6 @@ const ASPECT: Record<ProjectSize, string> = {
   tall: "aspect-[4/3] lg:aspect-[4/5]",
 };
 
-
 export function ProjectCard({
   project,
   index = 0,
@@ -39,7 +38,6 @@ export function ProjectCard({
       >
         {/* IMAGE */}
         <div className={`relative w-full overflow-hidden flex-1 ${aspectClass}`}>
-
           <img
             src={displayImage}
             alt={project.title}
@@ -57,13 +55,10 @@ export function ProjectCard({
           </div>
         </div>
 
-
         {/* TEXT */}
         <div className="flex flex-col p-4">
           <div className="flex items-baseline justify-between gap-3">
-            <h3 className="font-display text-lg leading-tight tracking-tight">
-              {project.title}
-            </h3>
+            <h3 className="font-display text-lg leading-tight tracking-tight">{project.title}</h3>
             <span className="shrink-0 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
               {project.year}
             </span>

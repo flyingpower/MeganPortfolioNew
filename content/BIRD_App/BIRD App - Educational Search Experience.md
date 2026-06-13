@@ -1,4 +1,5 @@
 ## BIRD App
+
 Educational search experience
 
 Year: 2025
@@ -34,13 +35,13 @@ My main responsibility was the conceptual and visual development of the search e
 
 My tasks included:
 
-*   developing the search concept and interaction logic
-*   creating low-fidelity sketches for the search flow
-*   designing the search, filter and map experience
-*   creating the clickable Figma prototype
-*   building custom UI components
-*   designing the screen layouts and visual system
-*   translating the concept into a consistent mobile interface
+- developing the search concept and interaction logic
+- creating low-fidelity sketches for the search flow
+- designing the search, filter and map experience
+- creating the clickable Figma prototype
+- building custom UI components
+- designing the screen layouts and visual system
+- translating the concept into a consistent mobile interface
 
 ### Process
 
@@ -54,7 +55,7 @@ Based on these sketches, I developed the final Figma prototype. Since there was 
 Context: Process Excerpt
 Placeholder: Design Goals)
 
- ({Image: BIRD_Sketch}
+({Image: BIRD_Sketch}
 Context: Process Excerpt
 Placeholder: Interaction Sketches)
 

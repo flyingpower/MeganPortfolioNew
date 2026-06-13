@@ -46,7 +46,6 @@ function Index() {
     <>
       {/* ───────────────── HERO ───────────────── */}
       <section className="relative isolate overflow-x-clip">
-
         <div className="w-full px-4 pt-20 md:px-6 md:pt-24 lg:px-8 lg:pt-28">
           {/* Stacked editorial name + portrait composition */}
           <div className="relative grid grid-cols-12 items-stretch gap-y-6 md:gap-x-2 lg:gap-x-4">
@@ -95,7 +94,6 @@ function Index() {
                 transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
                 style={{ left: "50%", top: "50%", x: "-50%", y: "calc(-50% - 50px)" }}
                 className="pointer-events-none absolute -z-20 h-[160%] w-[160%] text-pink-strong/55"
-
               >
                 <g transform="translate(100 100)">
                   {[0, 72, 144, 216, 288].map((deg) => (
@@ -131,8 +129,10 @@ function Index() {
                 transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10 h-[125%] w-auto max-w-none object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.18)]"
                 style={{
-                  maskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 78%, transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 78%, transparent 100%)",
+                  maskImage:
+                    "linear-gradient(to bottom, transparent 0%, black 12%, black 78%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, transparent 0%, black 12%, black 78%, transparent 100%)",
                 }}
               />
             </div>
@@ -150,8 +150,6 @@ function Index() {
               </motion.h1>
             </div>
           </div>
-
-
 
           {/* Short role line */}
           <motion.p
@@ -178,7 +176,6 @@ function Index() {
               Contact Me
               <ArrowUpRight size={16} className="btn-arrow" />
             </Link>
-
           </motion.div>
         </div>
 
@@ -247,10 +244,6 @@ function Index() {
         </div>
       </section>
 
-
-
-
-
       {/* ABOUT TEASER */}
       <section className="relative border-y border-hairline bg-card/40">
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12 md:px-10 md:py-32">
@@ -259,10 +252,11 @@ function Index() {
           </div>
           <div className="md:col-span-7">
             <p className="text-balance text-lg leading-relaxed text-muted-foreground md:text-xl">
-            I study Information Design at Hochschule der Medien Stuttgart,
-            focusing on UX, visual communication and user-centered 
-            digital experiences. I enjoy turning complex systems into clear, 
-            intuitive and visually engaging concepts — from enterprise UX to playful worlds that connect.</p>
+              I study Information Design at Hochschule der Medien Stuttgart, focusing on UX, visual
+              communication and user-centered digital experiences. I enjoy turning complex systems
+              into clear, intuitive and visually engaging concepts — from enterprise UX to playful
+              worlds that connect.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/about" className="btn-secondary">
                 More about me <ArrowUpRight size={16} className="btn-arrow" />
@@ -290,7 +284,8 @@ function Index() {
                 Get in touch <ArrowUpRight size={16} className="btn-arrow" />
               </Link>
               <a href="mailto:megan@mymielke.de" className="btn-dark">
-                megan@mymielke.de<ArrowUpRight size={16} className="btn-arrow ml-2" />
+                megan@mymielke.de
+                <ArrowUpRight size={16} className="btn-arrow ml-2" />
               </a>
             </div>
           </div>

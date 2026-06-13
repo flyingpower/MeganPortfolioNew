@@ -1,4 +1,5 @@
 ## Breuninger Beyond App
+
 Customer Loyalty mobile app
 
 Year: 2026
@@ -34,14 +35,14 @@ The project was a group effort, but my main focus was the conceptual and visual 
 
 My tasks included:
 
-*   analyzing UX problems in the existing Beyond area
-*   developing concepts for the voucher experience
-*   creating sketches, paper prototypes and Figma drafts
-*   working with the Breuninger Figma design library
-*   designing the voucher overview and voucher detail sheets
-*   contributing to the redesigned account and card experience
-*   refining all screens at the end of the process
-*   unifying interactions, pressed states, transitions and prototype connections
+- analyzing UX problems in the existing Beyond area
+- developing concepts for the voucher experience
+- creating sketches, paper prototypes and Figma drafts
+- working with the Breuninger Figma design library
+- designing the voucher overview and voucher detail sheets
+- contributing to the redesigned account and card experience
+- refining all screens at the end of the process
+- unifying interactions, pressed states, transitions and prototype connections
 
 ### Process
 
