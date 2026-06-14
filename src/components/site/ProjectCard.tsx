@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import type { Project, ProjectSize } from "@/data/projects";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ASPECT: Record<ProjectSize, string> = {
   lg: "aspect-[4/3] lg:aspect-[16/10]",
@@ -20,11 +22,31 @@ export function ProjectCard({
   index?: number;
   forceSixteenNine?: boolean;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const displayImage = project.thumbnail || project.image;
   const aspectClass = forceSixteenNine ? "aspect-[16/9]" : (ASPECT[project.size] ?? "aspect-[4/3]");
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const filterValue = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.5, 0.65, 1],
+    ["grayscale(100%)", "grayscale(100%)", "grayscale(0%)", "grayscale(100%)", "grayscale(100%)"],
+  );
+
+  const scaleValue = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.5, 0.65, 1],
+    [0.98, 0.98, 1.05, 0.98, 0.98],
+  );
+
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -38,11 +60,12 @@ export function ProjectCard({
       >
         {/* IMAGE */}
         <div className={`relative w-full overflow-hidden flex-1 ${aspectClass}`}>
-          <img
+          <motion.img
+            style={isMobile ? { filter: filterValue, scale: scaleValue } : {}}
             src={displayImage}
             alt={project.title}
             loading="lazy"
-            className={`h-full w-full object-cover ${!forceSixteenNine && project.slug === "bird-app" ? "object-right" : "object-center"} grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-active:scale-105 group-active:grayscale-0 group-focus-visible:scale-105 group-focus-visible:grayscale-0`}
+            className={`h-full w-full object-cover ${!forceSixteenNine && project.slug === "bird-app" ? "object-right" : "object-center"} ${isMobile ? "" : "grayscale"} transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-active:scale-105 group-active:grayscale-0 group-focus-visible:scale-105 group-focus-visible:grayscale-0`}
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/90 to-transparent" />
 

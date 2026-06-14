@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Download } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { BackButton } from "@/components/site/BackButton";
+import { useIsMobile } from "@/hooks/use-mobile";
 import Information_Design from "../../content/CV_Portfolio/Information_Design.jpg";
 import Abitur from "../../content/CV_Portfolio/Abitur.jpg";
 import Primary_School from "../../content/CV_Portfolio/Primary_School.jpg";
@@ -139,19 +140,26 @@ function Timeline({
   items,
   accent,
   onHover,
+  onClick,
+  activeItem,
+  isMobile,
 }: {
   items: Item[];
   accent: "pink" | "green";
   onHover: (i: number | null) => void;
+  onClick: (i: number) => void;
+  activeItem: number | null;
+  isMobile: boolean;
 }) {
   return (
     <ol className="relative space-y-8 border-l border-hairline pl-6">
       {items.map((it, i) => (
         <li
           key={i}
-          className="relative cursor-pointer rounded-lg p-2 -ml-2 transition-colors hover:bg-card/60"
-          onMouseEnter={() => onHover(i)}
-          onMouseLeave={() => onHover(null)}
+          className={`relative cursor-pointer rounded-lg p-2 -ml-2 transition-colors hover:bg-card/60 ${isMobile && activeItem === i ? "bg-card/80" : ""}`}
+          onMouseEnter={() => !isMobile && onHover(i)}
+          onMouseLeave={() => !isMobile && onHover(null)}
+          onClick={() => isMobile && onClick(i)}
         >
           <span
             className={`absolute -left-[21px] top-3.5 h-2.5 w-2.5 rounded-full ${
@@ -199,6 +207,27 @@ function HoverPanel({ item }: { item: Item }) {
 function CVPage() {
   const [hoveredEdu, setHoveredEdu] = useState<number | null>(null);
   const [hoveredExp, setHoveredExp] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMobileClick = (
+    setter: (val: number | null) => void,
+    otherSetter: (val: number | null) => void,
+    i: number,
+    currentVal: number | null,
+  ) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    otherSetter(null);
+
+    if (currentVal === i) {
+      setter(null);
+    } else {
+      setter(i);
+      timerRef.current = setTimeout(() => {
+        setter(null);
+      }, 3000);
+    }
+  };
 
   return (
     <>
@@ -227,24 +256,38 @@ function CVPage() {
           {/* Education column */}
           <div>
             <h3 className="font-display mb-8 text-3xl">Education</h3>
-            <Timeline items={education} accent="pink" onHover={setHoveredEdu} />
+            <Timeline
+              items={education}
+              accent="pink"
+              onHover={setHoveredEdu}
+              onClick={(i) => handleMobileClick(setHoveredEdu, setHoveredExp, i, hoveredEdu)}
+              activeItem={hoveredEdu}
+              isMobile={isMobile}
+            />
           </div>
 
           {/* Experience column */}
           <div>
             <h3 className="font-display mb-8 text-3xl">Experience</h3>
-            <Timeline items={experience} accent="green" onHover={setHoveredExp} />
+            <Timeline
+              items={experience}
+              accent="green"
+              onHover={setHoveredExp}
+              onClick={(i) => handleMobileClick(setHoveredExp, setHoveredEdu, i, hoveredExp)}
+              activeItem={hoveredExp}
+              isMobile={isMobile}
+            />
           </div>
         </div>
 
         {/* Viewport-anchored hover panels — half page width with margin */}
         {hoveredExp !== null && (
-          <div className="pointer-events-none fixed left-8 top-1/2 z-40 hidden w-[calc(50vw-4rem)] -translate-y-1/2 md:block">
+          <div className="pointer-events-none fixed left-1/2 top-1/2 z-40 w-[90vw] -translate-x-1/2 -translate-y-1/2 md:left-8 md:right-auto md:w-[calc(50vw-4rem)] md:translate-x-0">
             <HoverPanel item={experience[hoveredExp]} />
           </div>
         )}
         {hoveredEdu !== null && (
-          <div className="pointer-events-none fixed right-8 top-1/2 z-40 hidden w-[calc(50vw-4rem)] -translate-y-1/2 md:block">
+          <div className="pointer-events-none fixed left-1/2 top-1/2 z-40 w-[90vw] -translate-x-1/2 -translate-y-1/2 md:left-auto md:right-8 md:w-[calc(50vw-4rem)] md:translate-x-0">
             <HoverPanel item={education[hoveredEdu]} />
           </div>
         )}
